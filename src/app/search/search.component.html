@@ -1,18 +1,20 @@
-<div>
+<div id="search">
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
-  <ul>
-    <li *ngFor="let show of shows$ | async">
-      {{show.show.name}}
-      <img src={{show.show.image.medium}}>
-    </li>
-  </ul>
 </div>
 
+<div *ngIf="shows$">
+  <div id="box-container" *ngFor="let show of shows$ | async">
+    <a routerLink="/shows/{{show.show.id}}">
+      <div id="name">{{show.show.name}}</div>
+      <div id="image">
+        <img *ngIf="show.show.image != null" src={{show.show.image.medium}}>
+        <img *ngIf="show.show.image == null"
+          src="https://laurentvandessel.be/wp-content/uploads/2014/03/placeholder-750x451.png">
+      </div>
+      <div id="score">{{show.score}}</div>
+      <div id="summary" [innerHTML]="show.show.summary"></div>
+      <div id="genres">{{show.show.genres}}</div>
+    </a>
+  </div>
 
-
-<!-- <ul>
-  <li *ngFor="let show of shows$">
-    {{show.show.name}}
-  </li>
-</ul> -->
+</div>

@@ -1,0 +1,33 @@
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100px;
+  height: 150px;
+}
+
+#box-container{
+  display: flex;
+  border: 1px solid #000000;
+}
+
+#name{
+  display: flex;
+}
+
+#image{
+  display: flex;
+}
+
+#score{
+  display: flex;
+}
+
+#summary{
+  display: flex;
+}
+
+#genres{
+  display: flex;
+
+}
