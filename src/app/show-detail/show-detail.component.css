@@ -1,0 +1,43 @@
+#main-box {
+  width: 60%;
+  margin: auto;
+}
+
+#show-details {
+  display: flex;
+}
+
+#show-image {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.show-image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 170px;
+  height: auto;
+}
+
+#cast-and-episodes {
+  display: flex;
+  justify-content: space-around;
+}
+
+#cast {
+  display: flex;
+  flex-direction: row;
+}
+
+#cast-name {
+  padding-left: 30px;
+}
+
+.cast-image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 80px;
+  height: auto;
+}
