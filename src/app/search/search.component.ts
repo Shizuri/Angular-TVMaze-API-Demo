@@ -29,13 +29,4 @@ export class SearchComponent implements OnInit {
         );
     }
 
-    getShowList() {
-        this.data.getShowList().subscribe(
-            res => {
-                // console.log(res);
-                this.shows$ = res;
-            }
-        );
-    }
-
 }

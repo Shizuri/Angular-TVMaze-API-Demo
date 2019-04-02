@@ -12,10 +12,6 @@ export class DataService {
 
     constructor(private http: HttpClient) { }
 
-    getShowList(): Observable<any> {
-        return this.http.get(this.showsUrl);
-    }
-
     searchShow(term: string): Observable<any> {
         if (!term.trim()) {
             return of([]);
@@ -24,7 +20,6 @@ export class DataService {
     }
 
     getShow(id: number): Observable<any> {
-        // console.log(`string is: ${this.singleShowUrl}${id}`);
         return this.http.get(`${this.singleShowUrl}${id}`);
     }
 

@@ -6,28 +6,42 @@ img {
   height: 150px;
 }
 
-#box-container{
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+#search {
   display: flex;
+  width: 60%;
+  margin: auto;
+  flex-direction: row;
+}
+
+#search-box {
+  flex-grow: 1;
+}
+
+#search-button {
+  justify-content: flex-end;
+}
+
+#box-container {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
   border: 1px solid #000000;
+  width: 60%;
+  margin: auto;
 }
 
-#name{
+#box-container:hover {
+  cursor: pointer;
+}
+
+#first-line {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-#image{
-  display: flex;
-}
-
-#score{
-  display: flex;
-}
-
-#summary{
-  display: flex;
-}
-
-#genres{
-  display: flex;
-
-}
