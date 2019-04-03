@@ -1,0 +1,15 @@
+<div *ngIf="cast">
+  <h2>Cast:</h2>
+  <div *ngFor="let member of cast">
+    <div id="main">
+        <div *ngIf="member.person.image">
+          <img src={{member.person.image.medium}} alt="NO IMAGE" class="image">
+        </div>
+        <div *ngIf="member.person.image == null">
+          <img class="image"
+            src="https://www.vrc.crim.cam.ac.uk/VRCconferences/conference/cplenaries/pelnspeakers/person-placeholder.jpg/image">
+        </div>
+      <div id="name">{{member.person.name}}</div>
+    </div>
+  </div>
+</div>

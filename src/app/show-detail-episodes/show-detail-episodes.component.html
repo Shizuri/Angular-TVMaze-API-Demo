@@ -1,0 +1,6 @@
+<div *ngIf="episodes">
+  <h2>Episodes:</h2>
+  <div *ngFor="let episode of episodes">
+    <div id="season-and-name">S{{episode.season}}E{{episode.number}} {{episode.name}}</div>
+  </div>
+</div>

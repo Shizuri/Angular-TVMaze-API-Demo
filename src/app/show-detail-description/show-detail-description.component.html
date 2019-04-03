@@ -1,0 +1,21 @@
+<div *ngIf="show">
+  <div id="name">
+    <h2><a href="{{show.url}}" target="_blank">{{show.name}}</a></h2>
+  </div>
+  <div id="details">
+    <div id="image">
+      <div *ngIf="show.image != null"> <img src="{{show.image.medium}}" class="image"></div>
+      <div *ngIf="show.image == null">
+        <img class="image" src="https://laurentvandessel.be/wp-content/uploads/2014/03/placeholder-750x451.png">
+      </div>
+    </div>
+    <div id="description">
+      <div [innerHTML]="show.summary"></div> <!-- using innerHTML here because the JSON provides HTML formating within it-->
+      <div>Language: {{show.language}}</div>
+      <div>Genres: {{show.genres}}</div>
+      <div>Status: {{show.status}}</div>
+      <div>Premier: {{show.premiered}}</div>
+      <div>Official site: <a href="{{show.url}}" target="_blank">{{show.url}}</a></div>
+    </div>
+  </div>
+</div>

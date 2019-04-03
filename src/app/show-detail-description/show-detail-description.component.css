@@ -1,0 +1,20 @@
+#details {
+  display: flex;
+}
+
+#name a {
+  text-decoration: none;
+}
+
+#image {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 180px;
+  height: auto;
+}

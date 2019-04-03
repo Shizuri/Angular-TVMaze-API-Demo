@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Observable, Subject } from 'rxjs';
-import {
-    debounceTime, distinctUntilChanged, switchMap
-} from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-search',
@@ -12,7 +10,7 @@ import {
 })
 export class SearchComponent implements OnInit {
 
-    shows$: Observable<any[]>;
+    shows$;
     private searchTerms = new Subject<string>();
 
     constructor(private data: DataService) { }

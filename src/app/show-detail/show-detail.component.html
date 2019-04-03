@@ -1,52 +1,7 @@
 <div id="main-box">
-
-  <div *ngIf="show">
-    <div id="show-name">
-      <h2><a href="{{show.url}}" target="_blank">{{show.name}}</a></h2>
-    </div>
-    <div id="show-details">
-      <div id="show-image">
-        <div *ngIf="show.image != null"> <img src="{{show.image.medium}}" class="show-image"></div>
-        <div *ngIf="show.image == null">
-          <img class="show-image" src="https://laurentvandessel.be/wp-content/uploads/2014/03/placeholder-750x451.png">
-        </div>
-      </div>
-      <div id="show-description">
-        <div [innerHTML]="show.summary"></div> <!-- using innerHTML here because the JSON provides HTML formating within it-->
-        <div>Language: {{show.language}}</div>
-        <div>Genres: {{show.genres}}</div>
-        <div>Status: {{show.status}}</div>
-        <div>Premier: {{show.premiered}}</div>
-        <div>Official site: <a href="{{show.url}}" target="_blank">{{show.url}}</a></div>
-      </div>
-    </div>
-  </div>
-
+  <app-show-detail-description></app-show-detail-description>
   <div id="cast-and-episodes">
-
-    <div *ngIf="cast">
-      <h2>Cast:</h2>
-      <div *ngFor="let member of cast">
-        <div id="cast">
-            <div *ngIf="member.person.image">
-              <img src={{member.person.image.medium}} alt="NO IMAGE" class="cast-image">
-            </div>
-            <div *ngIf="member.person.image == null">
-              <img class="cast-image"
-                src="https://www.vrc.crim.cam.ac.uk/VRCconferences/conference/cplenaries/pelnspeakers/person-placeholder.jpg/image">
-            </div>
-          <div id="cast-name">{{member.person.name}}</div>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="episodes">
-      <h2>Episodes:</h2>
-      <div *ngFor="let episode of episodes">
-        <div>S{{episode.season}}E{{episode.number}} {{episode.name}}</div>
-      </div>
-    </div>
-
+    <app-show-detail-cast></app-show-detail-cast>
+    <app-show-detail-episodes></app-show-detail-episodes>
   </div>
-
 </div>
