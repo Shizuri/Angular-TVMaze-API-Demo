@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowDetailComponent implements OnInit {
 
+    loading = true;
+
     constructor() { }
 
     ngOnInit() {
+        this.loading = false;
     }
 
 }

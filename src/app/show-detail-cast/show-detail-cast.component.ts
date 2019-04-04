@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ShowDetailCastComponent implements OnInit {
 
     cast;
+    loading = false;
 
     constructor(
         private data: DataService,
@@ -23,7 +24,10 @@ export class ShowDetailCastComponent implements OnInit {
     getCast() {
         const id = +this.route.snapshot.paramMap.get('id');
         this.data.getCast(id)
-            .subscribe(cast => this.cast = cast);
+            .subscribe(cast =>{
+                this.cast = cast;
+                this.loading = true;
+            });
     }
 
 }

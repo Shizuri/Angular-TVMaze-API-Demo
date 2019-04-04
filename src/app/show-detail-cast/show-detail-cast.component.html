@@ -7,9 +7,13 @@
         </div>
         <div *ngIf="member.person.image == null">
           <img class="image"
-            src="https://www.vrc.crim.cam.ac.uk/VRCconferences/conference/cplenaries/pelnspeakers/person-placeholder.jpg/image">
+            src="assets/images/personNotFound.jpg">
         </div>
       <div id="name">{{member.person.name}}</div>
     </div>
   </div>
+</div>
+
+<div *ngIf="loading">
+  Loading...
 </div>

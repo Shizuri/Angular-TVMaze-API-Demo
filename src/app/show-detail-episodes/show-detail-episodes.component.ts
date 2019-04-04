@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ShowDetailEpisodesComponent implements OnInit {
 
     episodes;
+    loading = true;
 
     constructor(
         private data: DataService,
@@ -23,6 +24,9 @@ export class ShowDetailEpisodesComponent implements OnInit {
     getEpisodes() {
         const id = +this.route.snapshot.paramMap.get('id');
         this.data.getEpisodes(id)
-            .subscribe(episodes => this.episodes = episodes);
+            .subscribe(episodes =>{
+                this.episodes = episodes;
+                this.loading = false;
+            });
     }
 }

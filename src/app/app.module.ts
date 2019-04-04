@@ -9,6 +9,7 @@ import { ShowDetailComponent } from './show-detail/show-detail.component';
 import { ShowDetailDescriptionComponent } from './show-detail-description/show-detail-description.component';
 import { ShowDetailCastComponent } from './show-detail-cast/show-detail-cast.component';
 import { ShowDetailEpisodesComponent } from './show-detail-episodes/show-detail-episodes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ShowDetailEpisodesComponent } from './show-detail-episodes/show-detail-
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

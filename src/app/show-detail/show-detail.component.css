@@ -7,3 +7,12 @@
   display: flex;
   justify-content: space-around;
 }
+#main-box {
+  width: 60%;
+  margin: auto;
+}
+
+#cast-and-episodes {
+  display: flex;
+  justify-content: space-around;
+}

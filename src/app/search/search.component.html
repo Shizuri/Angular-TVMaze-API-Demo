@@ -1,10 +1,32 @@
 <div id="search">
-  <input #searchBox id="search-box" (input)="search(searchBox.value)"/>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Show name"/>
   <button id="search-button">Search</button>
 </div>
 
+<input type="text" [formControl]="showName"> <!-- for Reactive Forms-->
+
 <div *ngIf="shows$">
   <div id="box-container" *ngFor="let show of shows$ | async" routerLink="/shows/{{show.show.id}}">
+    <div id="img-box">
+      <img *ngIf="show.show.image != null" src={{show.show.image.medium}} alt="image of the show">
+      <img *ngIf="show.show.image == null"
+        src="assets/images/noShowImage100x140.png">
+    </div>
+    <div id="all-text-box">
+      <div id="first-line">
+        <span id="name">{{show.show.name}}</span>
+        <span id="score">{{show.score}}</span>
+      </div>
+      <div id="summary" [innerHTML]="show.show.summary"></div>
+      <div id="genres">{{show.show.genres}}</div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div *ngIf="shows$">  <!-- for Reactive Forms-->
+  <div id="box-container" *ngFor="let show of showList" routerLink="/shows/{{show.show.id}}">
     <div id="img-box">
       <img *ngIf="show.show.image != null" src={{show.show.image.medium}} alt="image of the show">
       <img *ngIf="show.show.image == null"
@@ -19,5 +41,8 @@
       <div id="genres">{{show.show.genres}}</div>
     </div>
   </div>
+</div>
 
+<div *ngIf="loading">
+  Loading...
 </div>

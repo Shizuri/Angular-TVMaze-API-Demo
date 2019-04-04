@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ShowDetailDescriptionComponent implements OnInit {
 
     show;
+    loading = true;
 
     constructor(
         private data: DataService,
@@ -23,7 +24,10 @@ export class ShowDetailDescriptionComponent implements OnInit {
     getShow() {
         const id = +this.route.snapshot.paramMap.get('id');
         this.data.getShow(id)
-            .subscribe(show => this.show = show);
+            .subscribe(show =>{
+                this.show = show;
+                this.loading = false;
+            });
     }
 
 }
