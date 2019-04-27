@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ShowDetailCastComponent implements OnInit {
 
     cast;
-    loading = false;
+    loading = true;
 
     constructor(
         private data: DataService,
@@ -26,7 +26,7 @@ export class ShowDetailCastComponent implements OnInit {
         this.data.getCast(id)
             .subscribe(cast =>{
                 this.cast = cast;
-                this.loading = true;
+                this.loading = false;
             });
     }
 
